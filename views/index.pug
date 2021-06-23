@@ -5,7 +5,7 @@ block content
       h3 Welcome #{user.name}
     br
     .container 
-      a(href="/add").btn.btn-primary(style="float:right") Add Product 
+      a(href="/add").btn.btn-primary(style="float:right") Add a Product 
       br
     br
     table.table.table-striped.table-hover.table-dark.align-items-center
@@ -27,7 +27,7 @@ block content
               while n<=4
                 if product.rating-1>=n
                   span 
-                    i.fa.fa-star(style="color:green")
+                    i.fa.fa-star(style="color:orange")
                 else
                   span 
                     i.fa.fa-star
