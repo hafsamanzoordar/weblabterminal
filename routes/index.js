@@ -17,10 +17,14 @@ router.get('/cart',async  function(req, res, next) {
   cart = [];
   res.render('cart',{cart});
 });
-
-
-
-
+router.get('/cart/:id',async  function(req, res, next) {
+  product = await Product.findById(req.params.id);
+  let cart = [];
+  if(req.cookies.cart) cart =  req.cookies.cart;
+  cart.push(product);
+  res.cookie('cart',cart);
+  res.redirect('/');
+});
 router.get('/cart/remove/:id',async  function(req, res, next) {
   cart = [];
   if(req.cookies.cart)
