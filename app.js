@@ -54,8 +54,7 @@ mongoose.connect('mongodb+srv://user123:user123@cluster0.slzvi.mongodb.net/termi
 }
 ).then(()=>{
   console.log('Connected');
-})
-.catch(err=>{
+}).catch(err=>{
   console.log(err.message);
 });;
 
