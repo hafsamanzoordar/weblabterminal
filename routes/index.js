@@ -5,10 +5,9 @@ var checkSessionAuth = require('../middlewares/checkSessionAuth');
 
 /* GET home page. */
 router.get('/',async  function(req, res, next) {
-  products = 0;
+  products = await Product.find();
+  res.send('index',{ products });
   
-  
-  res.render('index',{ products });
 });
 router.get('/add',checkSessionAuth,async  function(req, res, next) {
   res.render('add');
