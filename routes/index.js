@@ -5,14 +5,11 @@ var checkSessionAuth = require('../middlewares/checkSessionAuth');
 
 /* GET home page. */
 router.get('/',async  function(req, res, next) {
-  products = await Product.find();
+  products = await Product.find(2);
   res.render('index',{ products });
   
 });
 router.get('/add',checkSessionAuth,async  function(req, res, next) {
-  products = 0;
-  
-  
   res.render('add');
 });
 router.get('/cart',async  function(req, res, next) {
