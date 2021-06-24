@@ -38,7 +38,9 @@ router.get('/cart/remove/:id',async  function(req, res, next) {
 router.post('/add',async  function(req, res, next) {
   product = new Product(req.body);
   console.log(product);
-  await product.save();
+  
+  
+  
   res.redirect('/');
 });
 module.exports = router;
