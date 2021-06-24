@@ -5,7 +5,7 @@ block content
       h3 Welcome #{user.name}
     br
     .container 
-      a(href="/add").btn.btn-primary(style="float:right") Add a Product 
+      a(href="/add").btn.btn-info(style="float:right") Add a Product 
       br
     br
     table.table.table-striped.table-hover.table-light.align-items-center
@@ -33,4 +33,4 @@ block content
                     i.fa.fa-star
                 -n+=1
             td 
-              a(href="/cart/"+product._id).btn.btn-primary Add to Cart 
+              a(href="/cart/"+product._id).btn.btn-success Add to Cart 
