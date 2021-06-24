@@ -11,15 +11,16 @@ router.get('/',async  function(req, res, next) {
 router.get('/add',checkSessionAuth,async  function(req, res, next) {
   res.render('add');
 });
-
-router.get('/cart/:id',async  function(req, res, next) {
-  product = await Product.findById(req.params.id);
-  let cart = [];
-  if(req.cookies.cart) cart =  req.cookies.cart;
-  cart.push(product);
-  res.cookie('cart',cart);
-  res.redirect('/');
+router.get('/cart',async  function(req, res, next) {
+  cart = req.cookies.cart;
+  if(!cart)
+  cart = [];
+  res.render('cart',{cart});
 });
+
+
+
+
 router.get('/cart/remove/:id',async  function(req, res, next) {
   cart = [];
   if(req.cookies.cart)
